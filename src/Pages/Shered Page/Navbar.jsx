@@ -23,7 +23,7 @@ const Navbar = () => {
                         <li><NavLink className={({ isActive }) => isActive ? "text-[#C3345F]" : "" } to="/statistics">All Toys</NavLink></li>
                         {
                             
-                            user && <>
+                             <>
                                 <li><NavLink className={({ isActive }) => isActive ? "text-[#C3345F]" : "" } to="/applied">My Toys</NavLink></li>
                                 <li><NavLink className={({ isActive }) => isActive ? "text-[#C3345F]" : "" } to="/addToys">Add A Toy</NavLink></li>
                             </>

@@ -6,6 +6,7 @@ import Profiles from "../Pages/Login/Profiles";
 import NotFound from "../Pages/Shered Page/NotFound";
 import Home from "../Pages/home/Home";
 import AddToy from "../Pages/AddToy";
+import PrivetRoute from "./PrivetRoute";
 
 const route = createBrowserRouter([
     {
@@ -30,7 +31,7 @@ const route = createBrowserRouter([
             },
             {
                 path: "/addToys",
-                element: <AddToy/>
+                element: <PrivetRoute><AddToy/></PrivetRoute>
             }
         ]
     }
