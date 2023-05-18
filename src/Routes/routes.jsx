@@ -5,6 +5,7 @@ import Resgister from "../Pages/Login/Resgister";
 import Profiles from "../Pages/Login/Profiles";
 import NotFound from "../Pages/Shered Page/NotFound";
 import Home from "../Pages/home/Home";
+import AddToy from "../Pages/AddToy";
 
 const route = createBrowserRouter([
     {
@@ -26,6 +27,10 @@ const route = createBrowserRouter([
             {
                 path: "/profiles",
                 element: <Profiles/>
+            },
+            {
+                path: "/addToys",
+                element: <AddToy/>
             }
         ]
     }

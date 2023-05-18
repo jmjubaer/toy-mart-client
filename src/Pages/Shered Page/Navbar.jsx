@@ -19,17 +19,17 @@ const Navbar = () => {
 
                 <div className={`jm_nav ${open ? "w-4/5 md:w-1/2 p-5" : "w-0"}`}>
                     <ul className='flex flex-col lg:flex-row gap-3 lg:gap-x-7'>
-                        <li><NavLink to="/" className={({ isActive }) => isActive ? "text-blue-e" : "" }>Home</NavLink></li>
-                        <li><NavLink className={({ isActive }) => isActive ? "text-[#FF6899]" : "" } to="/statistics">All Toys</NavLink></li>
+                        <li><NavLink to="/" className={({ isActive }) => isActive ? "text-[#C3345F]" : "" }>Home</NavLink></li>
+                        <li><NavLink className={({ isActive }) => isActive ? "text-[#C3345F]" : "" } to="/statistics">All Toys</NavLink></li>
                         {
                             
                             user && <>
-                                <li><NavLink className={({ isActive }) => isActive ? "text-[#FF6899]" : "" } to="/applied">My Toys</NavLink></li>
-                                <li><NavLink className={({ isActive }) => isActive ? "text-[#FF6899]" : "" } to="/blogs">Add A Toy</NavLink></li>
+                                <li><NavLink className={({ isActive }) => isActive ? "text-[#C3345F]" : "" } to="/applied">My Toys</NavLink></li>
+                                <li><NavLink className={({ isActive }) => isActive ? "text-[#C3345F]" : "" } to="/addToys">Add A Toy</NavLink></li>
                             </>
                             
                         }
-                        <li><NavLink className={({ isActive }) => isActive ? "text-[#FF6899]" : "" } to="/blogs">Blog</NavLink></li>
+                        <li><NavLink className={({ isActive }) => isActive ? "text-[#C3345F]" : "" } to="/blogs">Blog</NavLink></li>
                     </ul>
                     <div className="">
                     <Tooltip id='my-tooltip' />
