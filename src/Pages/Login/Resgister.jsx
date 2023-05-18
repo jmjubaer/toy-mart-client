@@ -2,12 +2,13 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaEyeSlash,FaEye } from "react-icons/fa";
 import { updateProfile } from 'firebase/auth';
-// import { AuthContest } from '../../Provider/AuthProvider';
+import { AuthContest } from '../../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Resgister = () => {
     const [show,setShow] = useState(false);
     const [passErr,setPassErr] = useState("");
-    // const {createUser} = useContext(AuthContest);
+    const {createUser} = useContext(AuthContest);
 
     const handleCreateUser = event => {
         event.preventDefault();
@@ -27,7 +28,11 @@ const Resgister = () => {
                 displayName: name,
                 photoURL: photo
             })
-            navigate(from)
+            Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: 'User Created successful', 
+              })
             event.target.reset();
         })
         .catch(err => {

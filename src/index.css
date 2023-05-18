@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.jm_container{
+  width: 1280px;
+  max-width: 96%;
+  margin: 0 auto;
+}
 .jm_shadow{
   box-shadow: 0 5px 10px #1111116a;
 }

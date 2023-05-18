@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaBars,FaTimes } from 'react-icons/fa';
+import { AuthContest } from "../../Provider/AuthProvider";
 
 const Navbar = () => {
+    const {user} =  useContext(AuthContest)
     const [open, setOpen] = useState(false);
     return (
         <div>
-            <nav className='flex lg:grid lg:grid-cols-5 justify-between items-center'>
+            <nav className='flex lg:grid lg:grid-cols-5 justify-between items-center my-5'>
                 <h1 className='text-4xl lg:col-span-2 jm-shadow'><Link to="/"><span className='font-serif text-5xl text-blue-e '>J</span>m <span className='font-serif text-5xl text-blue-e'>J</span>ob <span className='font-serif text-5xl text-blue-e'>P</span>ortal</Link></h1>
 
                 <div className={`jm_nav ${open ? "w-4/5 md:w-1/2 p-5" : "w-0"}`}>
@@ -17,7 +19,13 @@ const Navbar = () => {
                         <li><NavLink className={({ isActive }) => isActive ? "text-[#FF6899]" : "" } to="/blogs">Blog</NavLink></li>
                         <li><NavLink className={({ isActive }) => isActive ? "text-[#FF6899]" : "" } to="/login">Login</NavLink></li>
                     </ul>
-                    <button className='btn-primary mt-10 lg:mt-0'>Star Applying</button>
+                    <div className="">
+                        {
+                            user ? <Link to="/">
+                                <img className="w-12 h-12 rounded-full object-cover border" src={user?.photoURL} alt="" />
+                            </Link> : <Link>Login</Link>
+                        }
+                    </div>
                 </div>
                 <button onClick={() => setOpen(!open)} className='block lg:hidden'>{open ? <FaTimes/> : <FaBars/>}</button>
             </nav>
