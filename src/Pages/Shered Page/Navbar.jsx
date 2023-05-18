@@ -12,9 +12,10 @@ const Navbar = () => {
                 <div className={`jm_nav ${open ? "w-4/5 md:w-1/2 p-5" : "w-0"}`}>
                     <ul className='flex flex-col lg:flex-row gap-3 lg:gap-x-7'>
                         <li><NavLink to="/" className={({ isActive }) => isActive ? "text-blue-e" : "" }>Home</NavLink></li>
-                        <li><NavLink className={({ isActive }) => isActive ? "text-blue-e" : "" } to="/statistics">Statistics</NavLink></li>
-                        <li><NavLink className={({ isActive }) => isActive ? "text-blue-e" : "" } to="/applied">Applied Jobs</NavLink></li>
-                        <li><NavLink className={({ isActive }) => isActive ? "text-blue-e" : "" } to="/blogs">Blog</NavLink></li>
+                        <li><NavLink className={({ isActive }) => isActive ? "text-[#FF6899]" : "" } to="/statistics">Statistics</NavLink></li>
+                        <li><NavLink className={({ isActive }) => isActive ? "text-[#FF6899]" : "" } to="/applied">Applied Jobs</NavLink></li>
+                        <li><NavLink className={({ isActive }) => isActive ? "text-[#FF6899]" : "" } to="/blogs">Blog</NavLink></li>
+                        <li><NavLink className={({ isActive }) => isActive ? "text-[#FF6899]" : "" } to="/login">Login</NavLink></li>
                     </ul>
                     <button className='btn-primary mt-10 lg:mt-0'>Star Applying</button>
                 </div>
