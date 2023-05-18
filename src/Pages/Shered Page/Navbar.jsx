@@ -22,7 +22,7 @@ const Navbar = () => {
                     <div className="">
                         {
                             user ? <Link to="/">
-                                <img className="w-12 h-12 rounded-full object-cover border" src={user?.photoURL} alt="" />
+                                <img title={user?.displayName} className="w-12 h-12 rounded-full object-cover border" src={user?.photoURL} alt="" />
                             </Link> : <Link>Login</Link>
                         }
                     </div>

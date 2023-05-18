@@ -4,6 +4,7 @@ import { FaEyeSlash,FaEye } from "react-icons/fa";
 import { updateProfile } from 'firebase/auth';
 import { AuthContest } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
+import SocialLogin from './SocialLogin';
 
 const Resgister = () => {
     const [show,setShow] = useState(false);
@@ -28,15 +29,20 @@ const Resgister = () => {
                 displayName: name,
                 photoURL: photo
             })
+            event.target.reset();
             Swal.fire({
                 icon: 'success',
                 title: 'Success',
                 text: 'User Created successful', 
               })
-            event.target.reset();
         })
         .catch(err => {
-            console.log(err.message);
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: `${err.message}`
+              })
+            console.log(err);
         })
     }
 
@@ -56,6 +62,7 @@ const Resgister = () => {
                 <input required className="jm_input" placeholder="Enter your Email" type="email" name="email" id="email" />
                 
                 <label className="block my-5 text-xl" htmlFor="password">Password</label>
+                <span className='text-red-500 mb-3 block'>{passErr}</span>
                 <div className="relative">
                     <input required className="jm_input" placeholder="Enter your Password" type={show ? "text" : "password"} name="password" id="password" />
                     <span className='absolute text-2xl bottom-3 right-2 cursor-pointer' onClick={()=> setShow(!show)}>
@@ -64,12 +71,12 @@ const Resgister = () => {
                     }
                         </span>
                 </div>
-                <div className="divider">OR</div>
 
-                <span className='text-red-500'>{passErr}</span>
                 <input className=" w-full jm_btn" type="submit" value="Sign Up" />
             </form>
-
+            <div className="divider">OR</div>
+            <SocialLogin></SocialLogin>
+            <div className="divider">Already have an account </div>
             <Link to="/login"><button className="jm_btn w-1/2 mx-auto">Sign In</button></Link>
         </div>
     </div>
