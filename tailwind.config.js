@@ -9,3 +9,5 @@ export default {
   },
   plugins: [require("daisyui")],
 }
+
+// color #FF6899
