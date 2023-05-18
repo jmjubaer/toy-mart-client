@@ -4,6 +4,7 @@ import Login from "../Pages/Login/Login";
 import Resgister from "../Pages/Login/Resgister";
 import Profiles from "../Pages/Login/Profiles";
 import NotFound from "../Pages/Shered Page/NotFound";
+import Home from "../Pages/home/Home";
 
 const route = createBrowserRouter([
     {
@@ -12,6 +13,9 @@ const route = createBrowserRouter([
         errorElement: <NotFound/>,
         children: [
             {
+                path: "/",
+                element: <Home></Home>
+            },         {
                 path: "/login",
                 element: <Login></Login>
             },

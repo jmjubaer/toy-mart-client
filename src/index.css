@@ -21,3 +21,7 @@
   .jm_btn{
     @apply btn hover:bg-[#C3345F] bg-[#FF6899] mt-8 block
   }
+  .footer_bg{
+    background: linear-gradient(rgba(255, 104, 152, 0.6),rgba(255, 104, 152, 0.6)),url("./assets/footer.jpg") bottom center no-repeat;
+    background-size: cover;
+  }

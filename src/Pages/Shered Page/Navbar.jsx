@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import logo from '../../assets/favicon.png'
 import { FaBars,FaTimes } from 'react-icons/fa';
 import { AuthContest } from "../../Provider/AuthProvider";
 import 'react-tooltip/dist/react-tooltip.css'
@@ -11,8 +12,10 @@ const Navbar = () => {
     return (
         <div className="bg-[#FF6899] rounded-full px-5 py-3 my-5 text-white">
             <nav className='flex lg:grid lg:grid-cols-5 justify-between items-center'>
-                <h1 className='text-4xl lg:col-span-2 jm-shadow'>
-                    <Link to="/"><span className='font-serif text-5xl text-[#C3345F] '>J</span>m <span className='font-serif text-5xl text-[#C3345F]'>T</span>oy <span className='font-serif text-5xl text-[#C3345F]'>W</span>orld</Link></h1>
+            <div className='text-4xl lg:col-span-2 flex gap-2'>
+                        <img className="w-12 h-12 object-cover rounded-xl" src={logo} alt="" />
+                        <Link to="/"><span className='font-serif text-5xl text-[#C3345F] '>J</span>m <span className='font-serif text-5xl text-[#C3345F]'>T</span>oy <span className='font-serif text-5xl text-[#C3345F]'>M</span>art</Link>
+                    </div>
 
                 <div className={`jm_nav ${open ? "w-4/5 md:w-1/2 p-5" : "w-0"}`}>
                     <ul className='flex flex-col lg:flex-row gap-3 lg:gap-x-7'>
