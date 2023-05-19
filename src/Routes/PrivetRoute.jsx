@@ -4,8 +4,7 @@ import { Navigate, useLocation } from 'react-router-dom';
 import LoadingSpinner from '../Pages/Shered Page/LoadingSpinner';
 
 const PrivetRoute = ({children}) => {
-    const location = useLocation()
-    console.log(location);
+    const location = useLocation();
     const {user,loading} = useContext(AuthContest)
     if(loading){
         return <LoadingSpinner></LoadingSpinner>

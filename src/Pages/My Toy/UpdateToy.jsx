@@ -4,7 +4,7 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateToy = () => {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, reset } = useForm();
     const toyInfo = useLoaderData();
     const { availableQuantity, description,name,photo, price,_id} = toyInfo || {};
     const navigate = useNavigate()
@@ -22,8 +22,16 @@ const UpdateToy = () => {
                     title: 'Success',
                     text: 'Toy Details updated successful', 
                   })
+                  reset();
                   navigate("/myToy")
             }
+        })
+        .catch(err => {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: `${err.message}`
+              })
         })
 
     };
@@ -45,7 +53,7 @@ const UpdateToy = () => {
                 <div className="flex w-full gap-8 my-8">
                     <label className="input-group">
                         <span className="bg-[#ff689887] w-1/4 text-lg">Price</span>
-                        <input required defaultValue={price} type="number" placeholder="Enter Toy Price" className="border-2 px-3 border-[#ff689887] outline-none w-full" {...register("price")} />
+                        <input required defaultValue={price} type="text" placeholder="Enter Toy Price" className="border-2 px-3 border-[#ff689887] outline-none w-full" {...register("price")} />
                     </label>
                     <label className="input-group">
                         <span className="bg-[#ff689887] w-1/4 text-lg">Quantity</span>

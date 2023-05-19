@@ -2,7 +2,7 @@ import React from "react";
 import { FaPencilAlt, FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const ToyRow = ({ toy, idx }) => {
+const ToyRow = ({ toy, idx,handleDelete }) => {
     return (
         <>
             <tr>
@@ -12,14 +12,18 @@ const ToyRow = ({ toy, idx }) => {
                 <td>${toy?.price}</td>
                 <td>{toy?.availableQuantity}</td>
                 <td>
-                    <Link to={`/updateToy/${toy?._id}`} className="text-[#ff6999] text-2xl">
+                    <Link
+                        to={`/updateToy/${toy?._id}`}
+                        className="text-[#ff6999] text-2xl"
+                    >
                         <FaPencilAlt />
                     </Link>
                 </td>
                 <td>
-                    <Link to={`/singleToy/${toy?._id}`} className="text-[#ff6999] text-2xl" >
+                    <button onClick={() => handleDelete(toy?._id)} className="text-[#ff6999] text-2xl"
+                    >
                         <FaTrashAlt />
-                    </Link>
+                    </button>
                 </td>
             </tr>
         </>

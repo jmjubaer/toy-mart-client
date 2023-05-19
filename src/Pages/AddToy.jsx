@@ -1,11 +1,12 @@
 import React, { useContext, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContest } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddToy = () => {
     const {user} = useContext(AuthContest)
     console.log(user);
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit,reset } = useForm();
     const onSubmit = (data) => {
         console.log(data)
         fetch('http://localhost:5000/addToy',{
@@ -15,7 +16,14 @@ const AddToy = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            if(data?.insertedId){
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success',
+                    text: 'User Login successful', 
+                  })
+                  reset();
+            }
         })
     };
     return (
@@ -31,9 +39,9 @@ const AddToy = () => {
                 </div>
 
                 <div className="flex w-full gap-8 my-8">
-                    <input required type="number" placeholder="Enter Toy Price" className="jm_input" {...register("price")} />
+                    <input required type="text" placeholder="Enter Toy Price" className="jm_input" {...register("price")} />
                     <input required type="number" placeholder="Available quantity" className="jm_input" {...register("availableQuantity")} />
-                    <input required type="number" placeholder="Toy Rating.." className="jm_input" {...register("rating")} />
+                    <input required type="text" placeholder="Toy Rating.." className="jm_input" {...register("rating")} />
                     <select className="w-full jm_input" {...register("category")}>
                         <option value="Baby doll">Baby doll</option>
                         <option value="Barbie doll">Barbie doll</option>
