@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaEyeSlash,FaEye } from "react-icons/fa";
 import { updateProfile } from 'firebase/auth';
 import { AuthContest } from '../../Provider/AuthProvider';
@@ -7,6 +7,9 @@ import Swal from 'sweetalert2';
 import SocialLogin from './SocialLogin';
 
 const Resgister = () => {
+    const location = useLocation();
+    const from = location?.state?.path || "/";
+    const navigate = useNavigate()
     const [show,setShow] = useState(false);
     const [passErr,setPassErr] = useState("");
     const {createUser} = useContext(AuthContest);
@@ -35,6 +38,7 @@ const Resgister = () => {
                 title: 'Success',
                 text: 'User Created successful', 
               })
+              navigate(from)
         })
         .catch(err => {
             Swal.fire({
@@ -75,7 +79,7 @@ const Resgister = () => {
                 <input className=" w-full jm_btn" type="submit" value="Sign Up" />
             </form>
             <div className="divider">OR</div>
-            <SocialLogin></SocialLogin>
+            <SocialLogin from={from}></SocialLogin>
             <div className="divider">Already have an account </div>
             <Link to="/login"><button className="jm_btn w-1/2 mx-auto">Sign In</button></Link>
         </div>

@@ -1,23 +1,12 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useLocation } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
 
 import "@smastrom/react-rating/style.css";
 
 const SingleToy = () => {
     const toyDetails = useLoaderData();
-    console.log(toyDetails);
-    const {
-        availableQuantity,
-        category,
-        description,
-        name,
-        photo,
-        price,
-        rating,
-        sellerEmail,
-        sellerName,
-    } = toyDetails;
+    const { availableQuantity, category, description,name,photo, price,rating,sellerEmail,sellerName} = toyDetails;
     return (
         <div className="card w-1/2 bg-base-100 shadow-xl mx-auto my-10 border-2 border-[#ff6899]">
             <figure className="px-10 pt-10">

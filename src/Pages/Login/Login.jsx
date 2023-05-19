@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEyeSlash,FaEye } from "react-icons/fa";
 import { AuthContest } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
@@ -7,6 +7,9 @@ import SocialLogin from "./SocialLogin";
 
 
 const Login = () => {
+    const location = useLocation()
+    const from = location?.state?.from || "/";
+    const navigate = useNavigate();
     const {signIn} =  useContext(AuthContest)
     const [show,setShow] = useState(false);
     const [err, setErr] = useState("");
@@ -25,7 +28,7 @@ const Login = () => {
                 title: 'Success',
                 text: 'User Login successful', 
               })
-            // navigate(from)
+            navigate(from)
         })
         .catch(err => {
             setErr(err.message)
@@ -59,10 +62,10 @@ const Login = () => {
 
             <div className="divider">OR</div>
             
-            <SocialLogin></SocialLogin>
+            <SocialLogin from={from}></SocialLogin>
 
             <div className="divider">Don't have any account </div>
-            <Link to="/register" ><button className="w-1/2 jm_btn mx-auto">Sign Up</button></Link>
+            <Link to="/register" state={{path:from}}><button className="w-1/2 jm_btn mx-auto">Sign Up</button></Link>
         </div>
     </div>
   );
