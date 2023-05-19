@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const ToyRow = ({toy,idx}) => {
+const ToyRow = ({ toy, idx }) => {
     return (
         <tr>
             <th>{idx}</th>
@@ -9,7 +10,11 @@ const ToyRow = ({toy,idx}) => {
             <td>{toy?.category}</td>
             <td>${toy?.price}</td>
             <td>{toy?.availableQuantity}</td>
-            <td><button className="btn bg-[#ff6899]">Details</button></td>
+            <td>
+                <Link to={`/singleToy/${toy?._id}`} className="btn btn-outline text-[#ff6999] hover:bg-[#ff6899]">
+                    Details
+                </Link>
+            </td>
         </tr>
     );
 };

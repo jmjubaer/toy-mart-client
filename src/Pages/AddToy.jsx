@@ -29,7 +29,7 @@ const AddToy = () => {
 
                 <div className="flex w-full gap-8 my-8">
                     <input type="number" placeholder="Enter Toy Price" className="jm_input" {...register("price")} />
-                    <input type="number" placeholder="Available quantity" className="jm_input" {...register("available")} />
+                    <input type="number" placeholder="Available quantity" className="jm_input" {...register("availableQuantity")} />
                     <input type="number" placeholder="Toy Rating.." className="jm_input" {...register("rating")} />
                     <select className="w-full jm_input" {...register("category")}>
                         <option value="Baby doll">Baby doll</option>
