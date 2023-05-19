@@ -1,7 +1,10 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import { useForm } from "react-hook-form";
+import { AuthContest } from "../Provider/AuthProvider";
 
 const AddToy = () => {
+    const {user} = useContext(AuthContest)
+    console.log(user);
     const { register, handleSubmit } = useForm();
     const onSubmit = (data) => {
         console.log(data)
@@ -19,18 +22,18 @@ const AddToy = () => {
         <div className="my-10">
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="flex w-full gap-8 my-8">
-                    <input type="text" placeholder="Enter Toy Name" className="jm_input" {...register("name")} />
-                    <input type="url" placeholder="Enter Toy Photo Url" className="jm_input" {...register("photo")} />
+                    <input required type="text" placeholder="Enter Toy Name" className="jm_input" {...register("name")} />
+                    <input required type="url" placeholder="Enter Toy Photo Url" className="jm_input" {...register("photo")} />
                 </div>
                 <div className="flex w-full gap-8 my-8">
-                    <input type="text" placeholder="Seller Name" className="jm_input" {...register("sellerName")} />
-                    <input type="email" placeholder="Seller Email" className="jm_input" {...register("sellerEmail")} />
+                    <input readOnly defaultValue={user?.displayName} type="text" placeholder="Seller Name" className="jm_input" {...register("sellerName")} />
+                    <input readOnly type="email" defaultValue={user?.email} placeholder="Seller Email" className="jm_input" {...register("sellerEmail")} />
                 </div>
 
                 <div className="flex w-full gap-8 my-8">
-                    <input type="number" placeholder="Enter Toy Price" className="jm_input" {...register("price")} />
-                    <input type="number" placeholder="Available quantity" className="jm_input" {...register("availableQuantity")} />
-                    <input type="number" placeholder="Toy Rating.." className="jm_input" {...register("rating")} />
+                    <input required type="number" placeholder="Enter Toy Price" className="jm_input" {...register("price")} />
+                    <input required type="number" placeholder="Available quantity" className="jm_input" {...register("availableQuantity")} />
+                    <input required type="number" placeholder="Toy Rating.." className="jm_input" {...register("rating")} />
                     <select className="w-full jm_input" {...register("category")}>
                         <option value="Baby doll">Baby doll</option>
                         <option value="Barbie doll">Barbie doll</option>
