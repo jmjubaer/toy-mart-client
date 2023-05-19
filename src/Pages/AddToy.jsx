@@ -8,7 +8,7 @@ const AddToy = () => {
     console.log(user);
     const { register, handleSubmit,reset } = useForm();
     const onSubmit = (data) => {
-        console.log(data)
+        data.price = parseFloat(data.price)
         fetch('http://localhost:5000/addToy',{
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -20,7 +20,7 @@ const AddToy = () => {
                 Swal.fire({
                     icon: 'success',
                     title: 'Success',
-                    text: 'User Login successful', 
+                    text: 'Toy added successful', 
                   })
                   reset();
             }

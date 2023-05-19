@@ -9,6 +9,7 @@ const UpdateToy = () => {
     const { availableQuantity, description,name,photo, price,_id} = toyInfo || {};
     const navigate = useNavigate()
     const handleUpdate = (data) => {
+        data.price = parseFloat(data.price);
         fetch(`http://localhost:5000/updateToy/${_id}`,{
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
