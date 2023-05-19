@@ -20,7 +20,7 @@ const Navbar = () => {
                 <div className={`jm_nav ${open ? "w-4/5 md:w-1/2 p-5" : "w-0"}`}>
                     <ul className='flex flex-col lg:flex-row gap-3 lg:gap-x-7'>
                         <li><NavLink to="/" className={({ isActive }) => isActive ? "text-[#C3345F]" : "" }>Home</NavLink></li>
-                        <li><NavLink className={({ isActive }) => isActive ? "text-[#C3345F]" : "" } to="/statistics">All Toys</NavLink></li>
+                        <li><NavLink className={({ isActive }) => isActive ? "text-[#C3345F]" : "" } to="/allToys">All Toys</NavLink></li>
                         {
                             
                              <>

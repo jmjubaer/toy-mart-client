@@ -7,6 +7,7 @@ import NotFound from "../Pages/Shered Page/NotFound";
 import Home from "../Pages/home/Home";
 import AddToy from "../Pages/AddToy";
 import PrivetRoute from "./PrivetRoute";
+import AllToy from "../Pages/All Toy/AllToy";
 
 const route = createBrowserRouter([
     {
@@ -32,6 +33,11 @@ const route = createBrowserRouter([
             {
                 path: "/addToys",
                 element: <PrivetRoute><AddToy/></PrivetRoute>
+            },
+            {
+                path: "/allToys",
+                element: <AllToy/>,
+                loader: () => fetch('http://localhost:5000/allToy')
             }
         ]
     }

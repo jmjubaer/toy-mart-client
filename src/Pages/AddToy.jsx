@@ -3,12 +3,23 @@ import { useForm } from "react-hook-form";
 
 const AddToy = () => {
     const { register, handleSubmit } = useForm();
-    const onSubmit = (data) => console.log(data);
+    const onSubmit = (data) => {
+        console.log(data)
+        fetch('http://localhost:5000/addToy',{
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
+    };
     return (
         <div className="my-10">
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="flex w-full gap-8 my-8">
-                    <input type="text" placeholder="Enter Toy Name" className="jm_input" {...register("Name")} />
+                    <input type="text" placeholder="Enter Toy Name" className="jm_input" {...register("name")} />
                     <input type="url" placeholder="Enter Toy Photo Url" className="jm_input" {...register("photo")} />
                 </div>
                 <div className="flex w-full gap-8 my-8">
