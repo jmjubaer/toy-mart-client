@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import { useNavigate } from "react-router-dom";
@@ -23,7 +23,7 @@ const ToyCard = ({ toy }) => {
         }
     }
     return (
-        <div className="card lg:card-side bg-base-100 shadow-xl border">
+        <div className="card lg:card-side bg-base-100 shadow-xl border border-[#ff6899]">
             <figure className="w-1/3 object-cover">
                 <img
                     className=" h-[300px] object-contain p-5"

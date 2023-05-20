@@ -25,3 +25,19 @@
     background: linear-gradient(rgba(255, 104, 152, 0.6),rgba(255, 104, 152, 0.6)),url("./assets/footer.jpg") bottom center no-repeat;
     background-size: cover;
   }
+  .jm_tab li {
+    border: none;
+    padding: 10px 20px;
+    color: #ff6899;
+    margin: 0 10px;
+    border: 1px solid #ff6899;
+    border-radius: 20px;
+  }
+  .jm_tab li.react-tabs__tab--selected {
+    border: none;
+    padding: 10px 20px;
+    background: #ff6899;
+    margin: 0 10px;
+    color: white;
+    border-radius: 20px;
+  }
