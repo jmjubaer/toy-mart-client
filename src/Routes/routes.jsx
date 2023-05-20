@@ -8,55 +8,76 @@ import Home from "../Pages/home/Home";
 import AddToy from "../Pages/AddToy";
 import PrivetRoute from "./PrivetRoute";
 import AllToy from "../Pages/All Toy/AllToy";
-import SingleToy from "../Pages/All Toy/SingleToy";
 import MyToy from "../Pages/My Toy/MyToy";
 import UpdateToy from "../Pages/My Toy/UpdateToy";
+import SingleToy from "../Pages/Shered Page/SingleToy";
 
 const route = createBrowserRouter([
     {
-        path: '/',
+        path: "/",
         element: <Main></Main>,
-        errorElement: <NotFound/>,
+        errorElement: <NotFound />,
         children: [
             {
                 path: "/",
-                element: <Home></Home>
-            },         {
+                element: <Home></Home>,
+            },
+            {
                 path: "/login",
-                element: <Login></Login>
+                element: <Login></Login>,
             },
             {
                 path: "/register",
-                element: <Resgister></Resgister>
+                element: <Resgister></Resgister>,
             },
             {
                 path: "/profiles",
-                element: <Profiles/>
+                element: <Profiles />,
             },
             {
                 path: "/addToys",
-                element: <PrivetRoute><AddToy/></PrivetRoute>
+                element: (
+                    <PrivetRoute>
+                        <AddToy />
+                    </PrivetRoute>
+                ),
             },
             {
                 path: "/allToys",
-                element: <AllToy/>,
-                loader: () => fetch('http://localhost:5000/allToy')
+                element: <AllToy />,
+                loader: () =>
+                    fetch("https://toy-mart-server-rho.vercel.app/allToy"),
             },
             {
                 path: "/myToy",
-                element: <PrivetRoute><MyToy/></PrivetRoute>
+                element: (
+                    <PrivetRoute>
+                        <MyToy />
+                    </PrivetRoute>
+                ),
             },
             {
                 path: "/singleToy/:id",
-                element: <PrivetRoute><SingleToy/></PrivetRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/toy/${params.id}`)
+                element: (
+                    <PrivetRoute>
+                        <SingleToy />
+                    </PrivetRoute>
+                ),
+                loader: ({ params }) =>
+                    fetch(
+                        `http://toy-mart-server-rho.vercel.app/toy/${params.id}`
+                    ),
             },
             {
                 path: "/updateToy/:id",
-                element: <PrivetRoute><UpdateToy/></PrivetRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/toy/${params.id}`)
-            }
-        ]
-    }
-])
+                element: (
+                    <PrivetRoute>
+                        <UpdateToy />
+                    </PrivetRoute>
+                ),
+                loader: ({ params }) => fetch(`http://toy-mart-server-rho.vercel.app/toy/${params.id}`),
+            },
+        ],
+    },
+]);
 export default route;

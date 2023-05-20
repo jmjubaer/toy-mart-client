@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import { useNavigate } from "react-router-dom";
+import { AuthContest } from "../../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const ToyCard = ({ toy }) => {
-    const {name,price,availableQuantity,rating,photo} = toy || {};
+    const {user} = useContext(AuthContest)
+    const navigate = useNavigate();
+    const {name,price,availableQuantity,rating,photo,_id} = toy || {};
+    const handleNavigate = () => {
+        if(!user){
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: "You have to log in first to view details"
+              })
+            navigate('/login')
+        }
+        else{
+            navigate(`/singleToy/${_id}`)
+        }
+    }
     return (
         <div className="card lg:card-side bg-base-100 shadow-xl border">
             <figure className="w-1/3 object-cover">
@@ -22,7 +40,7 @@ const ToyCard = ({ toy }) => {
                     <Rating className="inline" style={{ maxWidth: 100 }} value={rating} readOnly />
                 </div>
                 <div className="card-actions justify-end">
-                    <button className="jm_btn">View Details</button>
+                    <button onClick={handleNavigate} className="jm_btn">View Details</button>
                 </div>
             </div>
         </div>

@@ -7,16 +7,18 @@ const MyToy = () => {
     const { user } = useContext(AuthContest);
     const [toys, setToys] = useState([]);
     const [control, setControl] = useState("");
-    const [sort,setSort] = useState('Ascending');
+    const [sort, setSort] = useState("Ascending");
     useEffect(() => {
-        fetch(`http://localhost:5000/myToy?email=${user?.email}&sort=${sort}`)
+        fetch(
+            `http://toy-mart-server-rho.vercel.app/myToy?email=${user?.email}&sort=${sort}`
+        )
             .then((res) => res.json())
             .then((data) => {
                 setToys(data);
             });
-    }, [control, user,sort]);
+    }, [control, user, sort]);
     const handleDelete = (_id) => {
-        fetch(`http://localhost:5000/deleteToy/${_id}`, {
+        fetch(`https://toy-mart-server-rho.vercel.app/deleteToy/${_id}`, {
             method: "Delete",
         })
             .then((res) => res.json())
@@ -43,7 +45,10 @@ const MyToy = () => {
             <div className="form-control absolute z-50 right-0 -top-12">
                 <label className="input-group outline-none">
                     <span className="bg-gray-100">Sort By</span>
-                    <select onChange={(e)=> setSort(e.target.value)} className="w-fit p-2 border-8 border-gray-100 outline-none  text-lg">
+                    <select
+                        onChange={(e) => setSort(e.target.value)}
+                        className="w-fit p-2 border-8 border-gray-100 outline-none  text-lg"
+                    >
                         <option value="Ascending">Ascending</option>
                         <option value="Descending ">Descending</option>
                     </select>

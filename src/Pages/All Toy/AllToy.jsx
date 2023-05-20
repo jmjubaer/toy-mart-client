@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import ToyRow from "./ToyRow";
-import { FaSearch } from 'react-icons/fa';
+import { FaSearch } from "react-icons/fa";
 
 const AllToy = () => {
     const loadedToys = useLoaderData();
-    const [toys,setToys] = useState(loadedToys)
-    const handleSearch = event => {
-        fetch(`http://localhost:5000/search?text=${event.target.value}`)
-        .then(res => res.json())
-        .then(data => {
-            setToys(data);
-        })
-    }
+    const [toys, setToys] = useState(loadedToys);
+    const handleSearch = (event) => {
+        fetch(
+            `http://toy-mart-server-rho.vercel.app/search?text=${event.target.value}`
+        )
+            .then((res) => res.json())
+            .then((data) => {
+                setToys(data);
+            });
+    };
     return (
         <div>
             <div className="form-control mx-auto w-fit">
@@ -24,7 +26,7 @@ const AllToy = () => {
                         className="input border-2 border-[#ff6898b0]"
                     />
                     <button className="btn btn-square bg-[#ff6898be]">
-                        <FaSearch className="text-xl"/>
+                        <FaSearch className="text-xl" />
                     </button>
                 </div>
             </div>
