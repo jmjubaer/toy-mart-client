@@ -1,5 +1,5 @@
 import React from "react";
-import { useLoaderData, useLocation } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
 
 import "@smastrom/react-rating/style.css";
