@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaEyeSlash,FaEye } from "react-icons/fa";
 import { updateProfile } from 'firebase/auth';
@@ -13,7 +13,9 @@ const Resgister = () => {
     const [show,setShow] = useState(false);
     const [passErr,setPassErr] = useState("");
     const {createUser} = useContext(AuthContest);
-
+    useEffect(()=> {
+        document.title = "Register | Jm Toy Mart"
+    },[])
     const handleCreateUser = event => {
         event.preventDefault();
         setPassErr("")

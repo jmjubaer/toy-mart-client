@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -9,6 +9,9 @@ const UpdateToy = () => {
     const { availableQuantity, description, name, photo, price, _id } =
         toyInfo || {};
     const navigate = useNavigate();
+    useEffect(()=> {
+        document.title = "Update Toy | Jm Toy Mart"
+    },[])
     const handleUpdate = (data) => {
         data.price = parseFloat(data.price);
         fetch(`https://toy-mart-server-rho.vercel.app/updateToy/${_id}`, {

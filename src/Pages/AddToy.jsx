@@ -1,12 +1,14 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContest } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const AddToy = () => {
     const { user } = useContext(AuthContest);
-    console.log(user);
     const { register, handleSubmit, reset } = useForm();
+    useEffect(()=> {
+        document.title = "Add Toy | Jm Toy Mart" 
+    },[])
     const onSubmit = (data) => {
         data.price = parseFloat(data.price);
         fetch("https://toy-mart-server-rho.vercel.app/addToy", {

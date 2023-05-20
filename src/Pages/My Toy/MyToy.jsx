@@ -8,6 +8,9 @@ const MyToy = () => {
     const [toys, setToys] = useState([]);
     const [control, setControl] = useState("");
     const [sort, setSort] = useState("Ascending");
+    useEffect(()=> {
+        document.title = "My Toy | Jm Toy Mart"
+    },[])
     useEffect(() => {
         fetch(
             `http://toy-mart-server-rho.vercel.app/myToy?email=${user?.email}&sort=${sort}`

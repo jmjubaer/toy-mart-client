@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEyeSlash,FaEye } from "react-icons/fa";
 import { AuthContest } from "../../Provider/AuthProvider";
@@ -13,7 +13,9 @@ const Login = () => {
     const {signIn} =  useContext(AuthContest)
     const [show,setShow] = useState(false);
     const [err, setErr] = useState("");
-
+    useEffect(()=> {
+        document.title = "Login | Jm Toy Mart"
+    },[])
     const handleSign = (event) => {
         event.preventDefault();
         setErr("");

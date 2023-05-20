@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import ToyRow from "./ToyRow";
 import { FaSearch } from "react-icons/fa";
@@ -6,6 +6,9 @@ import { FaSearch } from "react-icons/fa";
 const AllToy = () => {
     const loadedToys = useLoaderData();
     const [toys, setToys] = useState(loadedToys);
+    useEffect(()=> {
+        document.title = "All Toy | Jm Toy Mart"
+    },[])
     const handleSearch = (event) => {
         fetch(
             `http://toy-mart-server-rho.vercel.app/search?text=${event.target.value}`

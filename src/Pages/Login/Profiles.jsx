@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import LoadingSpinner from "../Shered Page/LoadingSpinner";
 import { AuthContest } from "../../Provider/AuthProvider";
@@ -6,6 +6,9 @@ import { FaEnvelope, FaPhoneAlt, FaUser } from "react-icons/fa";
 
 const Profiles = () => {
   const { user,logout,loading } = useContext(AuthContest);
+  useEffect(()=> {
+    document.title = "Profiles | Jm Toy Mart"
+},[])
 const navigate = useNavigate();
   const handleSignOut = () => {
     logout();
