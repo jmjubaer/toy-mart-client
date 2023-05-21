@@ -1,7 +1,7 @@
 import React from 'react';
 import animation from "../../assets/animation.json"
 import Lottie from "lottie-react";
-import { FaHeadset } from 'react-icons/fa';
+import { FaChartBar, FaHeadset, FaShieldAlt, FaUserCheck } from 'react-icons/fa';
 const Opinion = () => {
     return (
         <div className='my-14'>
@@ -26,7 +26,7 @@ const Opinion = () => {
                     </div>
                     <div className="grid sm:grid-cols-12 text-center sm:text-left justify-center gap-5 items-center sm:justify-start my-10">
                         <div className="mx-auto sm:col-span-2">
-                            <FaHeadset className='text-5xl text-[#ff6899]'/>
+                            <FaShieldAlt className='text-5xl text-[#ff6899]'/>
                         </div>
                         <div className="sm:col-span-9">
                             <h3 className='text-xl sm:text-2xl font-bold mb-2'>Quality and Safety</h3>
@@ -35,7 +35,7 @@ const Opinion = () => {
                     </div>
                     <div className="grid sm:grid-cols-12 text-center sm:text-left justify-center gap-5 items-center sm:justify-start my-10">
                         <div className="mx-auto sm:col-span-2">
-                            <FaHeadset className='text-5xl text-[#ff6899]'/>
+                            <FaUserCheck className='text-5xl text-[#ff6899]'/>
                         </div>
                         <div className="sm:col-span-9">
                             <h3 className='text-xl sm:text-2xl font-bold mb-2'>Customer Satisfaction</h3>
@@ -44,7 +44,7 @@ const Opinion = () => {
                     </div>
                     <div className="grid sm:grid-cols-12 text-center sm:text-left justify-center gap-5 items-center sm:justify-start">
                         <div className="mx-auto sm:col-span-2">
-                            <FaHeadset className='text-5xl text-[#ff6899]'/>
+                            <FaChartBar className='text-5xl text-[#ff6899]'/>
                         </div>
                         <div className="sm:col-span-9">
                             <h3 className='text-xl sm:text-2xl font-bold mb-2'>Competitive Pricing</h3>

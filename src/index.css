@@ -15,7 +15,7 @@
 }
 
 .jm_nav{
-    @apply block lg:flex justify-between lg:col-span-3 items-center absolute lg:static lg:w-auto top-0 left-0 overflow-hidden h-screen lg:h-auto duration-500 bg-[#fff] lg:bg-[transparent] lg:p-0 z-50
+    @apply block lg:flex justify-between lg:col-span-3 items-center absolute lg:static lg:w-auto top-0 left-0 overflow-hidden h-screen lg:h-auto duration-500 bg-[#ff6899] lg:bg-[transparent] lg:p-0 z-50
   }
 
   .jm_btn{
@@ -27,17 +27,15 @@
   }
   .jm_tab li {
     border: none;
-    padding: 10px 20px;
     color: #ff6899;
-    margin: 0 10px;
     border: 1px solid #ff6899;
     border-radius: 20px;
+    @apply py-0 px-2 mx-1 my-2 sm:py-2 sm:px-5 sm:mx-2 sm:my-1
   }
   .jm_tab li.react-tabs__tab--selected {
-    border: none;
-    padding: 10px 20px;
     background: #ff6899;
-    margin: 0 10px;
     color: white;
-    border-radius: 20px;
+  }
+  .jm_carosel_btn{
+    @apply absolute flex gap-5 right-5 top-5 md:justify-between transform md:-translate-y-1/2 md:left-5 md:right-5 md:top-1/2 
   }

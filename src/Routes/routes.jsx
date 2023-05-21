@@ -11,6 +11,7 @@ import AllToy from "../Pages/All Toy/AllToy";
 import MyToy from "../Pages/My Toy/MyToy";
 import UpdateToy from "../Pages/My Toy/UpdateToy";
 import SingleToy from "../Pages/Shered Page/SingleToy";
+import Blogs from "../Pages/Blogs";
 
 const route = createBrowserRouter([
     {
@@ -77,6 +78,10 @@ const route = createBrowserRouter([
                 ),
                 loader: ({ params }) => fetch(`http://toy-mart-server-rho.vercel.app/toy/${params.id}`),
             },
+            {
+                path: "/blogs",
+                element: <Blogs/>
+            }
         ],
     },
 ]);

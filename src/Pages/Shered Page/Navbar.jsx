@@ -13,8 +13,9 @@ const Navbar = () => {
         <div className="bg-[#FF6899] rounded-full px-5 py-3 my-5 text-white">
             <nav className='flex lg:grid lg:grid-cols-5 justify-between items-center'>
             <div className='text-4xl lg:col-span-2 flex gap-2'>
-                        <img className="w-12 h-12 object-cover rounded-xl" src={logo} alt="" />
-                        <Link to="/"><span className='font-serif text-5xl text-[#C3345F] '>J</span>m <span className='font-serif text-5xl text-[#C3345F]'>T</span>oy <span className='font-serif text-5xl text-[#C3345F]'>M</span>art</Link>
+                        <Link to="/" className="flex">
+                            <img className="w-12 h-12 object-cover rounded-xl" src={logo} alt="" />
+                            <span className='font-serif text-5xl text-[#C3345F] '>J</span>m <span className='font-serif text-5xl text-[#C3345F]'>T</span>oy <span className='font-serif text-5xl text-[#C3345F]'>M</span>art</Link>
                     </div>
 
                 <div className={`jm_nav ${control ? "w-4/5 md:w-1/2 p-5" : "w-0"}`}>

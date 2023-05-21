@@ -23,10 +23,10 @@ const ToyCard = ({ toy }) => {
         }
     }
     return (
-        <div className="card lg:card-side bg-base-100 shadow-xl border border-[#ff6899]">
-            <figure className="w-1/3 object-cover">
+        <div className="card lg:card-side bg-base-100 shadow-xl border border-[#ff6899] ">
+            <figure className="w-40 mx-auto object-cover">
                 <img
-                    className=" h-[300px] object-contain p-5"
+                    className=" object-contain p-5"
                     src={photo}
                     alt="Album"
                 />
