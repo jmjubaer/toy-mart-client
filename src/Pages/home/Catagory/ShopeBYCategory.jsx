@@ -18,7 +18,7 @@ const ShopeBYCategory = () => {
     return (
         <div className="my-14">
             <div className="text-center relative">
-                <h2 className="text-5xl font-bold">Available Products</h2>
+                <h2 className="text-3xl sm:text-5xl font-bold">Available Products</h2>
                 <p className="text-lg w-3/5 mx-auto mt-3">Delight in a selection of dolls, dollhouses, and accessories for imaginative play</p>
                 <div className="w-28 h-1 bg-[#ff6898d2] absolute -bottom-3 left-1/2 -translate-x-1/2"></div>
             </div>

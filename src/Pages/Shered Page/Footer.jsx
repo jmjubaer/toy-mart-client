@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <div className="footer_bg py-5 text-[#1c1c1c]">
             <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-10 py-5 jm_container ">
-                <div className="col-span-2 self-center">
+                <div className="sm:col-span-2 self-center">
                     <div className='text-4xl lg:col-span-2 flex gap-2'>
                         <img className="w-12 h-12 object-cover" src={logo} alt="" />
                         <Link to="/"><span className='font-serif text-5xl text-[#C3345F] '>J</span>m <span className='font-serif text-5xl text-[#C3345F]'>T</span>oy <span className='font-serif text-5xl text-[#C3345F]'>M</span>art</Link>
@@ -67,47 +67,6 @@ const Footer = () => {
                         </li>
                     </ul>
                 </div>
-                {/* <div className="">
-                    <h3 className="text-2xl font-bold mb-4">Follow Us</h3>
-                    <ul>
-                        <li>
-                            <a
-                                className="hover:text-amber-600 my-2 block"
-                                href="#"
-                            >
-                                <FaFacebook className="inline mr-2 text-blue-600 text-xl" />{" "}
-                                Facebook
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                className="hover:text-amber-600 my-2 block"
-                                href="#"
-                            >
-                                <FaTwitter className="inline mr-2 text-blue-400 text-xl" />{" "}
-                                Twitter
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                className="hover:text-amber-600 my-2 block"
-                                href="#"
-                            >
-                                <FaLinkedin className="inline mr-2 text-blue-600 text-xl" />{" "}
-                                Linked in
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                className="hover:text-amber-600 my-2 block"
-                                href="#"
-                            >
-                                <FaInstagram className="inline mr-2 text-rose-600 text-xl" />{" "}
-                                Instagram
-                            </a>
-                        </li>
-                    </ul>
-                </div> */}
             </div>
             <div className="divider text-white after:bg-[#C3345F] before:bg-[#C3345F]">
                 <ul className="flex gap-2">

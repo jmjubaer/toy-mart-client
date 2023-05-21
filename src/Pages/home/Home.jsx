@@ -3,6 +3,7 @@ import Banner from './Banner';
 import ShopeBYCategory from './Catagory/ShopeBYCategory';
 import Gallery from './Gallery';
 import Achievement from './Achievement';
+import Opinion from './Opinion';
 
 const Home = () => {
     useEffect(()=> {
@@ -14,6 +15,7 @@ const Home = () => {
             <ShopeBYCategory></ShopeBYCategory>
             <Gallery></Gallery>
             <Achievement></Achievement>
+            <Opinion></Opinion>
         </div>
     );
 };
